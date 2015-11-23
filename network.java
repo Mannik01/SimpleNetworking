@@ -8,7 +8,10 @@ public class network
 		try
 		{
 			URL newUrl = new URL("http://www.oracle.com/");	
-			BufferedReader in = new BufferedReader(new InputStreamReader(newUrl.openStream()));
+			URLConnection newConnection = newUrl.openConnection();
+			newConnection.connect();
+
+			/*BufferedReader in = new BufferedReader(new InputStreamReader(newUrl.openStream()));
 
 			String line;
 			while((line = in.readLine()) != null)
@@ -16,7 +19,7 @@ public class network
 				System.out.println(line);
 			}
 
-			in.close();
+			in.close();*/
 		}
 		catch(MalformedURLException e)
 		{
